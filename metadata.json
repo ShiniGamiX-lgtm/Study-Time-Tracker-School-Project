@@ -1,0 +1,5 @@
+{
+  "name": "Study Time Tracker",
+  "description": "A smart study time tracker utilizing Max Heap and Linear Search algorithms to organize and visualize your study habits, powered by Gemini AI for personalized insights.",
+  "requestFramePermissions": []
+}
