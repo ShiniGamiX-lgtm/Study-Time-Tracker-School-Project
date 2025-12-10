@@ -7,12 +7,39 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-      body { font-family: 'Inter', sans-serif; }
+      body { 
+        font-family: 'Inter', sans-serif; 
+        background-color: #042f2e; /* teal-950 */
+        /* Muted Green Gradient: Dark Teal -> Forest -> Deep Emerald */
+        background-image: 
+          radial-gradient(at 0% 0%, hsla(166, 50%, 15%, 1) 0, transparent 50%), 
+          radial-gradient(at 50% 0%, hsla(150, 40%, 20%, 1) 0, transparent 50%), 
+          radial-gradient(at 100% 0%, hsla(180, 40%, 20%, 1) 0, transparent 50%);
+        background-attachment: fixed;
+        background-size: cover;
+        min-height: 100vh;
+      }
+      
+      /* Glassmorphism Utilities - Updated with Green Tint */
+      .glass-panel {
+        background: rgba(17, 43, 40, 0.6); /* deeply desaturated green tint */
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid rgba(132, 204, 22, 0.08); /* faint lime border */
+      }
+      
+      .glass-panel-dark {
+        background: rgba(4, 47, 46, 0.8);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+      }
+
       /* Custom scrollbar for better aesthetics */
       ::-webkit-scrollbar { width: 8px; }
-      ::-webkit-scrollbar-track { background: #1e293b; }
-      ::-webkit-scrollbar-thumb { background: #475569; border-radius: 4px; }
-      ::-webkit-scrollbar-thumb:hover { background: #64748b; }
+      ::-webkit-scrollbar-track { background: transparent; }
+      ::-webkit-scrollbar-thumb { background: rgba(20, 184, 166, 0.3); border-radius: 4px; }
+      ::-webkit-scrollbar-thumb:hover { background: rgba(20, 184, 166, 0.6); }
 
       @keyframes slideIn {
         from { opacity: 0; transform: translateY(20px); }
@@ -21,6 +48,21 @@
       @keyframes popIn {
         0% { transform: scale(0.9); opacity: 0; }
         100% { transform: scale(1); opacity: 1; }
+      }
+      @keyframes blob {
+        0% { transform: translate(0px, 0px) scale(1); }
+        33% { transform: translate(30px, -50px) scale(1.1); }
+        66% { transform: translate(-20px, 20px) scale(0.9); }
+        100% { transform: translate(0px, 0px) scale(1); }
+      }
+      .animate-blob {
+        animation: blob 10s infinite;
+      }
+      .animation-delay-2000 {
+        animation-delay: 2s;
+      }
+      .animation-delay-4000 {
+        animation-delay: 4s;
       }
       .animate-slide-in { animation: slideIn 0.3s ease-out forwards; }
       .animate-pop-in { animation: popIn 0.2s ease-out forwards; }
@@ -38,7 +80,16 @@
 }
 </script>
 </head>
-  <body class="bg-slate-900 text-slate-50 antialiased">
+  <body class="text-emerald-50 antialiased selection:bg-teal-500/30 selection:text-teal-200">
+    <!-- Ambient Background Blobs -->
+    <div class="fixed inset-0 overflow-hidden -z-10 pointer-events-none">
+        <!-- Teal Blob -->
+        <div class="absolute top-0 -left-4 w-96 h-96 bg-teal-800 rounded-full mix-blend-screen filter blur-3xl opacity-20 animate-blob"></div>
+        <!-- Lime/Yellow-Green Blob -->
+        <div class="absolute top-0 -right-4 w-96 h-96 bg-lime-800 rounded-full mix-blend-screen filter blur-3xl opacity-15 animate-blob animation-delay-2000"></div>
+        <!-- Emerald Blob -->
+        <div class="absolute -bottom-8 left-20 w-96 h-96 bg-emerald-800 rounded-full mix-blend-screen filter blur-3xl opacity-20 animate-blob animation-delay-4000"></div>
+    </div>
     <div id="root"></div>
   </body>
 </html>
