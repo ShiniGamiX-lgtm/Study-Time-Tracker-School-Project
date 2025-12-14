@@ -9,37 +9,37 @@
     <style>
       body { 
         font-family: 'Inter', sans-serif; 
-        background-color: #042f2e; /* teal-950 */
-        /* Muted Green Gradient: Dark Teal -> Forest -> Deep Emerald */
-        background-image: 
-          radial-gradient(at 0% 0%, hsla(166, 50%, 15%, 1) 0, transparent 50%), 
-          radial-gradient(at 50% 0%, hsla(150, 40%, 20%, 1) 0, transparent 50%), 
-          radial-gradient(at 100% 0%, hsla(180, 40%, 20%, 1) 0, transparent 50%);
+        background-color: #fdfbf7; 
+        /* Visible Gradient: Cream -> Almond -> Beige -> Latte */
+        background-image: linear-gradient(135deg, #fffbf5 0%, #f5efe6 35%, #ebe0d1 70%, #e0d0b8 100%);
         background-attachment: fixed;
         background-size: cover;
         min-height: 100vh;
+        color: #44403c; /* stone-700 */
       }
       
-      /* Glassmorphism Utilities - Updated with Green Tint */
+      /* Glassmorphism Utilities - Warm Tint */
       .glass-panel {
-        background: rgba(17, 43, 40, 0.6); /* deeply desaturated green tint */
+        background: rgba(255, 253, 250, 0.65);
         backdrop-filter: blur(12px);
         -webkit-backdrop-filter: blur(12px);
-        border: 1px solid rgba(132, 204, 22, 0.08); /* faint lime border */
+        border: 1px solid rgba(255, 255, 255, 0.4);
+        box-shadow: 0 4px 6px -1px rgba(68, 64, 60, 0.05), 0 2px 4px -1px rgba(68, 64, 60, 0.03);
       }
       
       .glass-panel-dark {
-        background: rgba(4, 47, 46, 0.8);
+        background: rgba(255, 255, 255, 0.95);
         backdrop-filter: blur(16px);
         -webkit-backdrop-filter: blur(16px);
-        border: 1px solid rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(214, 211, 209, 0.8);
+        box-shadow: 0 10px 15px -3px rgba(68, 64, 60, 0.1);
       }
 
-      /* Custom scrollbar for better aesthetics */
+      /* Custom scrollbar - Brown theme */
       ::-webkit-scrollbar { width: 8px; }
       ::-webkit-scrollbar-track { background: transparent; }
-      ::-webkit-scrollbar-thumb { background: rgba(20, 184, 166, 0.3); border-radius: 4px; }
-      ::-webkit-scrollbar-thumb:hover { background: rgba(20, 184, 166, 0.6); }
+      ::-webkit-scrollbar-thumb { background: rgba(168, 162, 158, 0.3); border-radius: 4px; }
+      ::-webkit-scrollbar-thumb:hover { background: rgba(120, 113, 108, 0.5); }
 
       @keyframes slideIn {
         from { opacity: 0; transform: translateY(20px); }
@@ -80,15 +80,15 @@
 }
 </script>
 </head>
-  <body class="text-emerald-50 antialiased selection:bg-teal-500/30 selection:text-teal-200">
-    <!-- Ambient Background Blobs -->
+  <body class="antialiased selection:bg-stone-200 selection:text-stone-800">
+    <!-- Ambient Background Blobs (Warm/Latte) - Slightly darkened for visibility against gradient -->
     <div class="fixed inset-0 overflow-hidden -z-10 pointer-events-none">
-        <!-- Teal Blob -->
-        <div class="absolute top-0 -left-4 w-96 h-96 bg-teal-800 rounded-full mix-blend-screen filter blur-3xl opacity-20 animate-blob"></div>
-        <!-- Lime/Yellow-Green Blob -->
-        <div class="absolute top-0 -right-4 w-96 h-96 bg-lime-800 rounded-full mix-blend-screen filter blur-3xl opacity-15 animate-blob animation-delay-2000"></div>
-        <!-- Emerald Blob -->
-        <div class="absolute -bottom-8 left-20 w-96 h-96 bg-emerald-800 rounded-full mix-blend-screen filter blur-3xl opacity-20 animate-blob animation-delay-4000"></div>
+        <!-- Soft Stone Blob -->
+        <div class="absolute top-0 -left-4 w-96 h-96 bg-stone-300 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob"></div>
+        <!-- Soft Amber/Biscuit Blob -->
+        <div class="absolute top-0 -right-4 w-96 h-96 bg-amber-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-2000"></div>
+        <!-- Soft Orange/Peach Blob -->
+        <div class="absolute -bottom-8 left-20 w-96 h-96 bg-orange-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-4000"></div>
     </div>
     <div id="root"></div>
   </body>

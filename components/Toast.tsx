@@ -21,21 +21,21 @@ const Toast: React.FC<ToastProps> = ({ toast, onClose }) => {
   }, [toast, onClose]);
 
   const icons = {
-    success: <CheckCircle className="w-5 h-5 text-lime-400" />,
-    info: <Info className="w-5 h-5 text-teal-400" />,
-    error: <XCircle className="w-5 h-5 text-red-400" />
+    success: <CheckCircle className="w-5 h-5 text-emerald-600" />,
+    info: <Info className="w-5 h-5 text-amber-600" />,
+    error: <XCircle className="w-5 h-5 text-red-500" />
   };
 
   const bgColors = {
-    success: 'glass-panel-dark border-lime-500/30',
-    info: 'glass-panel-dark border-teal-500/30',
-    error: 'glass-panel-dark border-red-500/30'
+    success: 'bg-white border-emerald-100 text-stone-700',
+    info: 'bg-white border-amber-100 text-stone-700',
+    error: 'bg-white border-red-100 text-stone-700'
   };
 
   return (
-    <div className={`fixed bottom-6 right-6 z-50 flex items-center gap-3 px-4 py-3 rounded-xl border shadow-2xl animate-slide-in backdrop-blur-md ${bgColors[toast.type]}`}>
+    <div className={`fixed bottom-6 right-6 z-50 flex items-center gap-3 px-4 py-3 rounded-xl border shadow-xl animate-slide-in backdrop-blur-md ${bgColors[toast.type]}`}>
       {icons[toast.type]}
-      <span className="text-sm font-medium text-emerald-50">{toast.message}</span>
+      <span className="text-sm font-medium">{toast.message}</span>
     </div>
   );
 };
